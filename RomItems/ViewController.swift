@@ -8,30 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var romItems : [Rom] = []
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-    
+       
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        do {
-        
-            romItems = try context.fetch(Rom.fetchRequest())
-        } catch {
-            
-        }
-    }
-    
+  
 }
