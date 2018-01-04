@@ -11,6 +11,7 @@ import UIKit
 class RomViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     var imagePicker = UIImagePickerController()
+    var game : Rom? = nil
     
     @IBAction func photosTap(_ sender: Any) {
         
@@ -19,6 +20,9 @@ class RomViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
         present(imagePicker, animated: true, completion: nil)
         
     }
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var addupdatebutton: UIButton!
     
     @IBAction func cameraTap(_ sender: Any) {
     }
@@ -38,6 +42,14 @@ class RomViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
         super.viewDidLoad()
 
         imagePicker.delegate = self
+        
+        if game != nil {
+            romImageView.image = UIImage(data: game!.image as! Data)
+            titleTextField.text = game!.title
+            addupdatebutton.setTitle("Update", for: .normal)
+        } else {
+            deleteButton.isHidden = true
+        }
     
     }
     @IBAction func addTap(_ sender: Any) {

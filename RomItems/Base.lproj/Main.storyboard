@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="yZh-Yf-Jdy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZK3-cp-9LD">
                             <connections>
-                                <segue destination="gsW-E2-Y3V" kind="show" id="jcm-6X-e6w"/>
+                                <segue destination="gsW-E2-Y3V" kind="show" identifier="romSegue" id="jcm-6X-e6w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -82,6 +82,13 @@
                                     <action selector="addTap:" destination="gsW-E2-Y3V" eventType="touchUpInside" id="y9M-Ia-0kS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8P-pk-9EI">
+                                <rect key="frame" x="165" y="367" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTap:" destination="gsW-E2-Y3V" eventType="touchUpInside" id="UvX-1k-QSq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,6 +97,7 @@
                             <constraint firstItem="MlH-AS-cdR" firstAttribute="top" secondItem="c4n-dX-6m9" secondAttribute="bottom" constant="20" id="J6O-Mv-y62"/>
                             <constraint firstItem="c4n-dX-6m9" firstAttribute="centerX" secondItem="Q30-A4-A5l" secondAttribute="centerX" id="OLY-J6-tV5"/>
                             <constraint firstItem="MlH-AS-cdR" firstAttribute="width" secondItem="c4n-dX-6m9" secondAttribute="width" id="PIR-Ad-Pep"/>
+                            <constraint firstItem="S8P-pk-9EI" firstAttribute="top" secondItem="mu6-a2-XXe" secondAttribute="bottom" constant="20" id="cYe-lj-Dxp"/>
                             <constraint firstItem="mu6-a2-XXe" firstAttribute="top" secondItem="MlH-AS-cdR" secondAttribute="bottom" constant="20" id="xXk-AJ-eMb"/>
                             <constraint firstItem="mu6-a2-XXe" firstAttribute="centerX" secondItem="Q30-A4-A5l" secondAttribute="centerX" id="ywP-Wa-Mml"/>
                         </constraints>
@@ -109,6 +117,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addupdatebutton" destination="mu6-a2-XXe" id="Bg9-8h-fHQ"/>
+                        <outlet property="deleteButton" destination="S8P-pk-9EI" id="eec-BK-XVa"/>
                         <outlet property="romImageView" destination="c4n-dX-6m9" id="TlU-q1-JPo"/>
                         <outlet property="titleTextField" destination="MlH-AS-cdR" id="BBc-4L-LaI"/>
                     </connections>

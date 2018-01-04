@@ -22,7 +22,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
     
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,5 +43,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = game.title
         cell.imageView?.image = UIImage(data: game.image as! Data)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let game = games[indexPath.row]
+        performSegue(withIdentifier: "romSegue" , sender: game)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! RomViewController
+        nextVC.game = sender as? Rom
     }
 }
