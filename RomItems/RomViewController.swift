@@ -49,6 +49,8 @@ class RomViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
         game.image = UIImagePNGRepresentation(romImageView.image!) as NSData?
     
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
 
    
     }

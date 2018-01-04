@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
         games = try context.fetch(Rom.fetchRequest())
+            tableView.reloadData()
         } catch {
         
         }
@@ -41,6 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         let game = games[indexPath.row]
         cell.textLabel?.text = game.title
+        cell.imageView?.image = UIImage(data: game.image as! Data)
         return cell
     }
 }
