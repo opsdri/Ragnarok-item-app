@@ -14,6 +14,7 @@
 		10A887FD1FFE547F00C65832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A887FC1FFE547F00C65832 /* Assets.xcassets */; };
 		10A888001FFE547F00C65832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A887FE1FFE547F00C65832 /* LaunchScreen.storyboard */; };
 		10A8880A1FFE5BC400C65832 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A888091FFE5BC400C65832 /* image.png */; };
+		10A8880E1FFE5E9500C65832 /* RomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8880D1FFE5E9500C65832 /* RomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		10A887FF1FFE547F00C65832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10A888011FFE547F00C65832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A888091FFE5BC400C65832 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		10A8880D1FFE5E9500C65832 /* RomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +63,11 @@
 				10A887F21FFE547F00C65832 /* AppDelegate.swift */,
 				10A887F41FFE547F00C65832 /* ViewController.swift */,
 				10A887F61FFE547F00C65832 /* Main.storyboard */,
+				10A8880D1FFE5E9500C65832 /* RomViewController.swift */,
+				10A887F91FFE547F00C65832 /* RomItems.xcdatamodeld */,
 				10A887FC1FFE547F00C65832 /* Assets.xcassets */,
 				10A887FE1FFE547F00C65832 /* LaunchScreen.storyboard */,
 				10A888011FFE547F00C65832 /* Info.plist */,
-				10A887F91FFE547F00C65832 /* RomItems.xcdatamodeld */,
 				10A888091FFE5BC400C65832 /* image.png */,
 			);
 			path = RomItems;
@@ -146,6 +149,7 @@
 				10A887FB1FFE547F00C65832 /* RomItems.xcdatamodeld in Sources */,
 				10A887F51FFE547F00C65832 /* ViewController.swift in Sources */,
 				10A887F31FFE547F00C65832 /* AppDelegate.swift in Sources */,
+				10A8880E1FFE5E9500C65832 /* RomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

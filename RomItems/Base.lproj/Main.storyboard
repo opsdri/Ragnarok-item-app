@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RomItems" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="RomItems" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,7 +21,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-Nl-WOu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ln0-Nl-WOu" secondAttribute="trailing" id="A5N-8O-gHe"/>
+                            <constraint firstItem="Ln0-Nl-WOu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A5h-Oi-XKj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ln0-Nl-WOu" secondAttribute="bottom" id="C1g-Sq-bFH"/>
+                            <constraint firstItem="Ln0-Nl-WOu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pwo-Cq-Ud8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yZh-Yf-Jdy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZK3-cp-9LD">
@@ -30,15 +42,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Ln0-Nl-WOu" id="bzc-1J-4kf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--Rom View Controller-->
         <scene sceneID="Xgj-cp-eBh">
             <objects>
-                <viewController id="gsW-E2-Y3V" sceneMemberID="viewController">
+                <viewController id="gsW-E2-Y3V" customClass="RomViewController" customModule="RomItems" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pKS-7i-SPD"/>
                         <viewControllerLayoutGuide type="bottom" id="8B4-TM-R9g"/>
@@ -54,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="160" id="Ehk-Pl-f4z"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlH-AS-cdR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlH-AS-cdR">
                                 <rect key="frame" x="47.5" y="264" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,6 +78,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu6-a2-XXe">
                                 <rect key="frame" x="172" y="314" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTap:" destination="gsW-E2-Y3V" eventType="touchUpInside" id="y9M-Ia-0kS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,14 +96,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="kZA-On-Y7I">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="XFC-52-5ux"/>
-                            <barButtonItem title="Photos" id="4xO-eh-iW4"/>
+                            <barButtonItem systemItem="camera" id="XFC-52-5ux">
+                                <connections>
+                                    <action selector="cameraTap:" destination="gsW-E2-Y3V" id="CRM-Rl-OLX"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="4xO-eh-iW4">
+                                <connections>
+                                    <action selector="photosTap:" destination="gsW-E2-Y3V" id="dX7-eg-GZI"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="romImageView" destination="c4n-dX-6m9" id="TlU-q1-JPo"/>
+                        <outlet property="titleTextField" destination="MlH-AS-cdR" id="BBc-4L-LaI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZq-hX-MG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1529" y="123"/>
+            <point key="canvasLocation" x="1527" y="123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Rl-Wf-oW1">
